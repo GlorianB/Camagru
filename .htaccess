@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+	# enable mod_rewrite module
+	RewriteEngine On
+
+	# define rewrite root
+	#RewriteBase /camagru
+
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+
+	# We execute the following
+	RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>
